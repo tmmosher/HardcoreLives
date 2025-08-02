@@ -1,0 +1,10 @@
+{
+  "item.hardcorelives.phoenix_flower" : "Phoenix Flower",
+  "item.hardcorelives.rod_of_narsus" : "Rod of Narsus",
+  "item.hardcorelives.woodland_heart" : "Woodland Heart",
+  "item.hardcorelives.chain_of_fate" : "Chain of Fate",
+  "item.hardcorelives.farron_dagger" : "Farron Dagger",
+  "item.hardcorelives.celerital_scroll" : "Celerital Scroll",
+  "item.hardcorelives.ergo_rune" : "Ergo Rune",
+  "itemgroup.artifacts": "HCL Artifacts"
+}
