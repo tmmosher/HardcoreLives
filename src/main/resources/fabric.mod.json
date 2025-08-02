@@ -9,6 +9,9 @@
   "license": "All-Rights-Reserved",
   "icon": "assets/hardcorelives/icon.png",
   "environment": "*",
+  "assets": [
+    "hardcorelives"
+  ],
   "entrypoints": {
     "fabric-datagen": [
       "org.hclives.hardcorelives.client.HardcorelivesDataGenerator"
