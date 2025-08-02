@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "hardcorelives",
+  "version": "${version}",
+  "name": "HardcoreLives",
+  "description": "A basic mod aiming to emulate the features of the popular 'Life Series', made by YouTuber Grian. ",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/hardcorelives/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "org.hclives.hardcorelives.client.HardcorelivesDataGenerator"
+    ],
+    "client": [
+      "org.hclives.hardcorelives.client.HardcorelivesClient"
+    ],
+    "main": [
+      "org.hclives.hardcorelives.Hardcorelives"
+    ]
+  },
+  "mixins": [
+    "hardcorelives.mixins.json",
+    {
+      "config": "hardcorelives.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
