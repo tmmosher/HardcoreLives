@@ -55,10 +55,10 @@ public class ModItems {
         // may need to refactor the 'settings' handling as per https://fabricmc.net/2024/10/14/1212.html
         RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Hardcorelives.MOD_ID, itemName));
         Item item = switch (itemName) {
-            case "woodland_heart" -> new WoodlandHeartItem(new Item.Settings().registryKey(key));
-            case "vedas_agni" -> new VedasAgniItem(new Item.Settings().registryKey(key));
-            case "sydan_stone" ->  new SydanStoneItem(new Item.Settings().registryKey(key));
-            case "tricksters_huilu" -> new TrickstersHuiluItem(new Item.Settings().registryKey(key));
+            case "woodland_heart" -> new WoodlandHeartItem(new Item.Settings().registryKey(key).maxCount(1));
+            case "vedas_agni" -> new VedasAgniItem(new Item.Settings().registryKey(key).maxCount(1));
+            case "sydan_stone" ->  new SydanStoneItem(new Item.Settings().registryKey(key).maxCount(1));
+            case "tricksters_huilu" -> new TrickstersHuiluItem(new Item.Settings().registryKey(key).maxCount(1));
             default -> new Item(new Item.Settings().registryKey(key));
         };
         return Registry.register(Registries.ITEM, key, item);

@@ -1,0 +1,14 @@
+{
+  "tricksters_huilu_flute_plays" : {
+    "subtitle": "sounds.hardcorelives.tricksters_huilu_flute_plays",
+    "sounds": [
+      "hardcorelives:tricksters_huilu_flute_plays"
+    ]
+  },
+  "tricksters_huilu_flute_fails" : {
+    "subtitle": "sounds.hardcorelives.tricksters_huilu_flute_fails",
+    "sounds": [
+      "hardcorelives:tricksters_huilu_flute_fails"
+    ]
+  }
+}
