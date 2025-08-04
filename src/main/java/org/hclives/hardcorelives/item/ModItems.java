@@ -11,6 +11,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import org.hclives.hardcorelives.Hardcorelives;
 import org.hclives.hardcorelives.item.custom.SydanStoneItem;
+import org.hclives.hardcorelives.item.custom.TrickstersHuiluItem;
 import org.hclives.hardcorelives.item.custom.VedasAgniItem;
 import org.hclives.hardcorelives.item.custom.WoodlandHeartItem;
 
@@ -57,6 +58,7 @@ public class ModItems {
             case "woodland_heart" -> new WoodlandHeartItem(new Item.Settings().registryKey(key));
             case "vedas_agni" -> new VedasAgniItem(new Item.Settings().registryKey(key));
             case "sydan_stone" ->  new SydanStoneItem(new Item.Settings().registryKey(key));
+            case "tricksters_huilu" -> new TrickstersHuiluItem(new Item.Settings().registryKey(key));
             default -> new Item(new Item.Settings().registryKey(key));
         };
         return Registry.register(Registries.ITEM, key, item);

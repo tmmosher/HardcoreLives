@@ -34,8 +34,8 @@ public class VedasAgniItem extends Item {
                 thirtyMinInFuture = lastUsed.plusSeconds(1800);
                 return ActionResult.SUCCESS;
             } else {
-                int gapMinutes = Math.toIntExact(thirtyMinInFuture.minusSeconds(Instant.now().getEpochSecond()).getEpochSecond() / 30);
-                user.sendMessage(Text.of("§l§mPowder stirs in the bottle... §r" + gapMinutes + " §l§mminutes remain."), false);
+                int gapMinutes = Math.toIntExact(thirtyMinInFuture.minusSeconds(Instant.now().getEpochSecond()).getEpochSecond() / 60);
+                user.sendMessage(Text.of("§l§cPowder stirs in the bottle... §r" + gapMinutes + " §l§cminutes remain."), false);
                 return ActionResult.PASS;
             }
         }

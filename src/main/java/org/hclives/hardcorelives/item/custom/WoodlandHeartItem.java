@@ -35,7 +35,7 @@ public class WoodlandHeartItem extends Item {
                 return ActionResult.SUCCESS;
             } else {
                 int gapMinutes = Math.toIntExact(oneHourInFuture.minusSeconds(Instant.now().getEpochSecond()).getEpochSecond() / 60);
-                user.sendMessage(Text.of("§l§nThe Woodland Heart rejects you... §r" + gapMinutes + " §l§nminutes remain."), false);
+                user.sendMessage(Text.of("§l§6The Woodland Heart rejects you... §r" + gapMinutes + " §l§6minutes remain."), false);
                 return ActionResult.PASS;
             }
         }

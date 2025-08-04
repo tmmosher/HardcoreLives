@@ -11,31 +11,31 @@ import net.minecraft.world.World;
 
 import java.time.Instant;
 
-public class SydanStoneItem extends Item {
+public class TrickstersHuiluItem extends Item {
 
     private Instant lastUsed = Instant.EPOCH;
-    private Instant thirtyMinInFuture = null;
+    private Instant oneHourInFuture = null;
 
-    public SydanStoneItem(Settings settings) {
+    public TrickstersHuiluItem(Settings settings) {
         super(settings);
     }
 
     public void addLogs(PlayerEntity user) {
-        user.getInventory().insertStack(new ItemStack(Items.COOKED_BEEF, 16));
+        user.getInventory().insertStack(new ItemStack(Items.TNT, 8));
     }
 
     @Override
     public ActionResult use(World world, PlayerEntity user, Hand hand) {
         if (!world.isClient()) {
             long timeGap = Instant.now().minusSeconds(lastUsed.getEpochSecond()).getEpochSecond();
-            if (timeGap >= 1800) {
+            if (timeGap >= 3600) {
                 addLogs(user);
                 lastUsed = Instant.now();
-                thirtyMinInFuture = lastUsed.plusSeconds(1800);
+                oneHourInFuture = lastUsed.plusSeconds(3600);
                 return ActionResult.SUCCESS;
             } else {
-                int gapMinutes = Math.toIntExact(thirtyMinInFuture.minusSeconds(Instant.now().getEpochSecond()).getEpochSecond() / 60);
-                user.sendMessage(Text.of("§l§3You feel the guilt subside... §r" + gapMinutes + " §l§3minutes remain."), false);
+                int gapMinutes = Math.toIntExact(oneHourInFuture.minusSeconds(Instant.now().getEpochSecond()).getEpochSecond() / 60);
+                user.sendMessage(Text.of("§l§eThe flute plays no notes, no matter how hard you try... §r" + gapMinutes + " §l§eminutes remain."), false);
                 return ActionResult.PASS;
             }
         }
