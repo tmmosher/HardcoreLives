@@ -10,6 +10,7 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import org.hclives.hardcorelives.Hardcorelives;
+import org.hclives.hardcorelives.item.custom.WoodlandHeartItem;
 
 public class ModItems {
     // increase lives by two
@@ -38,10 +39,13 @@ public class ModItems {
         entries.add(ERGO_RUNE);
     }
 
-    private static Item registerItem(String name) {
+    private static Item registerItem(String itemName) {
         // may need to refactor the 'settings' handling as per https://fabricmc.net/2024/10/14/1212.html
-        RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Hardcorelives.MOD_ID, name));
-        Item item = new Item(new Item.Settings().registryKey(key));
+        RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Hardcorelives.MOD_ID, itemName));
+        Item item = switch (itemName) {
+            case "woodland_heart" -> new WoodlandHeartItem(new Item.Settings().registryKey(key));
+            default -> new Item(new Item.Settings().registryKey(key));
+        };
         return Registry.register(Registries.ITEM, key, item);
     }
 
