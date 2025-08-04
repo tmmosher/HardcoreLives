@@ -9,5 +9,11 @@
   "item.hardcorelives.vedas_agni": "Vedas Agni",
   "item.hardcorelives.tricksters_huilu": "Trickster's Huilu",
   "item.hardcorelives.sydan_stone": "Sydän Stone",
+
+  "tooltip.hardcorelives.tricksters.huilu.1": "A flute wielded by the chaotic hill spirits",
+  "tooltip.hardcorelives.tricksters.huilu.2": "known as the Hiisi. Said to have been used",
+  "tooltip.hardcorelives.tricksters.huilu.3": "to create the whistling winds that flow through",
+  "tooltip.hardcorelives.tricksters.huilu.4": "narrow mountain passes.",
+
   "itemgroup.artifacts": "Artifacts"
 }
