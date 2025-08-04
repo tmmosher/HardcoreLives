@@ -18,11 +18,13 @@
   "tooltip.hardcorelives.sydan_stone.2": "while holding this stone.",
   "tooltip.hardcorelives.woodland_heart.1": "You hear a faint creaking noise",
   "tooltip.hardcorelives.woodland_heart.2": "as the wood pulses in your hand.",
+  "tooltip.hardcorelives.vedas_agni.1": "The scent of sulfur assaults your nose.",
 
   "sounds.hardcorelives.tricksters_huilu_flute_plays": "Flute plays",
   "sounds.hardcorelives.tricksters_huilu_flute_fails": "Flute fails",
   "sounds.hardcorelives.sydan_stone_plays": "The Stone weeps...",
   "sounds.hardcorelives.woodland_heart_plays": "The Heart beats...",
+  "sounds.hardcorelives.vedas_agni_plays": "Powder falls",
 
   "itemgroup.artifacts": "Artifacts"
 }

@@ -1,5 +1,6 @@
 package org.hclives.hardcorelives.item.custom;
 
+import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -27,7 +28,15 @@ public class WoodlandHeartItem extends Item {
     }
 
     public void addLogs(PlayerEntity user) {
-        user.getInventory().insertStack(new ItemStack(Items.OAK_LOG, 64));
+        boolean inserted = user.getInventory().insertStack(new ItemStack(Items.OAK_LOG, 64));
+        if (!inserted) {
+            ItemEntity droppedIfFull = new ItemEntity(user.getWorld(),
+                    user.getX(),
+                    user.getY()+0.5,
+                    user.getZ(),
+                    new ItemStack(Items.OAK_LOG, 64));
+            user.getWorld().spawnEntity(droppedIfFull);
+        }
     }
 
     @Override
@@ -39,8 +48,8 @@ public class WoodlandHeartItem extends Item {
                 addLogs(user);
                 cooldowns.setLastUsedTime(Instant.now());
                 cooldowns.setNextUseTime(cooldowns.getLastUsedTime().plusSeconds(ONE_HOUR_IN_SECONDS));
-                world.playSound(null, user.getBlockPos(), ModSounds.WOODLAND_HEART_PLAYS, SoundCategory.BLOCKS,
-                        0.5f, 0.8f);
+                world.playSound(null, user.getBlockPos(), ModSounds.WOODLAND_HEART_PLAYS,
+                        SoundCategory.PLAYERS, 0.6f, 0.8f);
                 user.getItemCooldownManager().set(selfItemStack, 50);
                 return ActionResult.SUCCESS;
             } else {

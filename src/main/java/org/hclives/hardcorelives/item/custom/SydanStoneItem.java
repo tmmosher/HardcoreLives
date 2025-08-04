@@ -1,5 +1,6 @@
 package org.hclives.hardcorelives.item.custom;
 
+import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -27,7 +28,15 @@ public class SydanStoneItem extends Item {
     }
 
     public void addBeef(PlayerEntity user) {
-        user.getInventory().insertStack(new ItemStack(Items.COOKED_BEEF, 16));
+        boolean inserted = user.getInventory().insertStack(new ItemStack(Items.COOKED_BEEF, 16));
+        if (!inserted) {
+            ItemEntity droppedIfFull = new ItemEntity(user.getWorld(),
+                    user.getX(),
+                    user.getY()+0.5,
+                    user.getZ(),
+                    new ItemStack(Items.COOKED_BEEF, 16));
+            user.getWorld().spawnEntity(droppedIfFull);
+        }
     }
 
     @Override

@@ -12,6 +12,7 @@ public class ModSounds {
     public static final SoundEvent TRICKSTERS_HUILU_FLUTE_FAILS = registerSoundEvent("tricksters_huilu_flute_fails");
     public static final SoundEvent SYDAN_STONE_PLAYS = registerSoundEvent("sydan_stone_plays");
     public static final SoundEvent WOODLAND_HEART_PLAYS =  registerSoundEvent("woodland_heart_plays");
+    public static final SoundEvent VEDAS_AGNI_PLAYS =  registerSoundEvent("vedas_agni_plays");
 
     public static SoundEvent registerSoundEvent(String name) {
         Identifier id = Identifier.of(Hardcorelives.MOD_ID, name);

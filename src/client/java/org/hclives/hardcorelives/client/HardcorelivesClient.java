@@ -27,6 +27,10 @@ public class HardcorelivesClient implements ClientModInitializer {
                 list.add(Text.translatable("tooltip.hardcorelives.woodland_heart.2"));
                 return;
             }
+            if (itemStack.isOf(ModItems.VEDAS_AGNI)) {
+                list.add(Text.translatable("tooltip.hardcorelives.vedas_agni.1"));
+                return;
+            }
         });
     }
 }

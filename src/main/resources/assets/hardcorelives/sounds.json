@@ -19,5 +19,10 @@
     "sounds": [
       "hardcorelives:woodland_heart_plays"
     ]
+  }, "vedas_agni_plays" : {
+    "subtitle": "sounds.hardcorelives.vedas_agni_plays",
+    "sounds": [
+      "hardcorelives:vedas_agni_plays"
+    ]
   }
 }
