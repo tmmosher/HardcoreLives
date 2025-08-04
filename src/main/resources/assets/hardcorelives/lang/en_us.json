@@ -23,8 +23,9 @@
   "sounds.hardcorelives.tricksters_huilu_flute_plays": "Flute plays",
   "sounds.hardcorelives.tricksters_huilu_flute_fails": "Flute fails",
   "sounds.hardcorelives.sydan_stone_plays": "The Stone weeps...",
-  "sounds.hardcorelives.woodland_heart_plays": "The Heart beats...",
-  "sounds.hardcorelives.vedas_agni_plays": "Powder falls",
+  "sounds.hardcorelives.woodland_heart_plays": "The Wooden Heart beats...",
+  "sounds.hardcorelives.vedas_agni_plays": "Used Vedas Agni...",
+  "sounds.hardcorelives.ergo_rune_plays": "Time stands still...",
 
   "itemgroup.artifacts": "Artifacts"
 }

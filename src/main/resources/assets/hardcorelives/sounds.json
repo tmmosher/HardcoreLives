@@ -24,5 +24,10 @@
     "sounds": [
       "hardcorelives:vedas_agni_plays"
     ]
+  }, "ergo_rune_plays" : {
+    "subtitle": "sounds.hardcorelives.ergo_rune_plays",
+    "sounds": [
+      "hardcorelives:ergo_rune_plays"
+    ]
   }
 }

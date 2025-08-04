@@ -13,6 +13,7 @@ public class ModSounds {
     public static final SoundEvent SYDAN_STONE_PLAYS = registerSoundEvent("sydan_stone_plays");
     public static final SoundEvent WOODLAND_HEART_PLAYS =  registerSoundEvent("woodland_heart_plays");
     public static final SoundEvent VEDAS_AGNI_PLAYS =  registerSoundEvent("vedas_agni_plays");
+    public static final SoundEvent ERGO_RUNE_PLAYS =  registerSoundEvent("ergo_rune_plays");
 
     public static SoundEvent registerSoundEvent(String name) {
         Identifier id = Identifier.of(Hardcorelives.MOD_ID, name);

@@ -10,10 +10,7 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import org.hclives.hardcorelives.Hardcorelives;
-import org.hclives.hardcorelives.item.custom.SydanStoneItem;
-import org.hclives.hardcorelives.item.custom.TrickstersHuiluItem;
-import org.hclives.hardcorelives.item.custom.VedasAgniItem;
-import org.hclives.hardcorelives.item.custom.WoodlandHeartItem;
+import org.hclives.hardcorelives.item.custom.*;
 
 public class ModItems {
     // increase lives by two
@@ -56,6 +53,7 @@ public class ModItems {
         RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Hardcorelives.MOD_ID, itemName));
         Item item = switch (itemName) {
             case "woodland_heart" -> new WoodlandHeartItem(new Item.Settings().registryKey(key).maxCount(1));
+            case "ergo_rune" -> new ErgoRuneItem(new Item.Settings().registryKey(key).maxCount(1));
             case "vedas_agni" -> new VedasAgniItem(new Item.Settings().registryKey(key).maxCount(1));
             case "sydan_stone" ->  new SydanStoneItem(new Item.Settings().registryKey(key).maxCount(1));
             case "tricksters_huilu" -> new TrickstersHuiluItem(new Item.Settings().registryKey(key).maxCount(1));
