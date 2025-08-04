@@ -11,31 +11,31 @@ import net.minecraft.world.World;
 
 import java.time.Instant;
 
-public class WoodlandHeartItem extends Item {
+public class SydanStoneItem extends Item {
 
     private Instant lastUsed = Instant.EPOCH;
-    private Instant oneHourInFuture = null;
+    private Instant thirtyMinInFuture = null;
 
-    public WoodlandHeartItem(Settings settings) {
+    public SydanStoneItem(Settings settings) {
         super(settings);
     }
 
     public void addLogs(PlayerEntity user) {
-        user.getInventory().insertStack(new ItemStack(Items.OAK_LOG, 64));
+        user.getInventory().insertStack(new ItemStack(Items.COOKED_BEEF, 16));
     }
 
     @Override
     public ActionResult use(World world, PlayerEntity user, Hand hand) {
         if (!world.isClient()) {
             long timeGap = Instant.now().minusSeconds(lastUsed.getEpochSecond()).getEpochSecond();
-            if (timeGap >= 3600) {
+            if (timeGap >= 1800) {
                 addLogs(user);
                 lastUsed = Instant.now();
-                oneHourInFuture = lastUsed.plusSeconds(3600);
+                thirtyMinInFuture = lastUsed.plusSeconds(1800);
                 return ActionResult.SUCCESS;
             } else {
-                int gapMinutes = Math.toIntExact(oneHourInFuture.minusSeconds(Instant.now().getEpochSecond()).getEpochSecond() / 60);
-                user.sendMessage(Text.of("§l§nThe Woodland Heart rejects you... §r" + gapMinutes + " §l§nminutes remain."), false);
+                int gapMinutes = Math.toIntExact(thirtyMinInFuture.minusSeconds(Instant.now().getEpochSecond()).getEpochSecond() / 30);
+                user.sendMessage(Text.of("§l§mYou feel the guilt subside... §r" + gapMinutes + " §l§1minutes remain."), false);
                 return ActionResult.PASS;
             }
         }

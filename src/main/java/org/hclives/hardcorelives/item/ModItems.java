@@ -10,6 +10,8 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import org.hclives.hardcorelives.Hardcorelives;
+import org.hclives.hardcorelives.item.custom.SydanStoneItem;
+import org.hclives.hardcorelives.item.custom.VedasAgniItem;
 import org.hclives.hardcorelives.item.custom.WoodlandHeartItem;
 
 public class ModItems {
@@ -27,6 +29,12 @@ public class ModItems {
     public static final Item CELERITAL_SCROLL = registerItem("celerital_scroll");
     // freeze time, reducing tick speed to 0 and giving all other players slowness X for two seconds
     public static final Item ERGO_RUNE = registerItem("ergo_rune");
+    // Every 30 minutes, summon sixteen gunpowder items
+    public static final Item VEDAS_AGNI = registerItem("vedas_agni");
+    // every hour, summon eight TNT items
+    public static final Item TRICKSTERS_HUILU = registerItem("tricksters_huilu");
+    // every 30 minutes, summon sixteen cooked steaks
+    public static final Item SYDAN_STONE = registerItem("sydan_stone");
     // and many more...
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
@@ -37,6 +45,9 @@ public class ModItems {
         entries.add(FARRON_DAGGER);
         entries.add(CELERITAL_SCROLL);
         entries.add(ERGO_RUNE);
+        entries.add(VEDAS_AGNI);
+        entries.add(TRICKSTERS_HUILU);
+        entries.add(SYDAN_STONE);
     }
 
     private static Item registerItem(String itemName) {
@@ -44,6 +55,8 @@ public class ModItems {
         RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Hardcorelives.MOD_ID, itemName));
         Item item = switch (itemName) {
             case "woodland_heart" -> new WoodlandHeartItem(new Item.Settings().registryKey(key));
+            case "vedas_agni" -> new VedasAgniItem(new Item.Settings().registryKey(key));
+            case "sydan_stone" ->  new SydanStoneItem(new Item.Settings().registryKey(key));
             default -> new Item(new Item.Settings().registryKey(key));
         };
         return Registry.register(Registries.ITEM, key, item);

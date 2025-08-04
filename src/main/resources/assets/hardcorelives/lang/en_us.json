@@ -1,10 +1,13 @@
 {
-  "item.hardcorelives.phoenix_flower" : "Phoenix Flower",
-  "item.hardcorelives.rod_of_narsus" : "Rod of Narsus",
+  "item.hardcorelives.phoenix_flower" : "§p§lPhoenix Flower",
+  "item.hardcorelives.rod_of_narsus" : "§p§lRod of Narsus",
   "item.hardcorelives.woodland_heart" : "Woodland Heart",
-  "item.hardcorelives.chain_of_fate" : "Chain of Fate",
-  "item.hardcorelives.farron_dagger" : "Farron Dagger",
-  "item.hardcorelives.celerital_scroll" : "Celerital Scroll",
-  "item.hardcorelives.ergo_rune" : "Ergo Rune",
+  "item.hardcorelives.chain_of_fate" : "§p§lChain of Fate",
+  "item.hardcorelives.farron_dagger" : "§p§lFarron Dagger",
+  "item.hardcorelives.celerital_scroll" : "§p§lCelerital Scroll",
+  "item.hardcorelives.ergo_rune" : "§p§lErgo Rune",
+  "item.hardcorelives.vedas_agni": "Vedas Agni",
+  "item.hardcorelives.tricksters_huilu": "Trickster's Huilu",
+  "item.hardcorelives.sydan_stone": "Sydän Stone",
   "itemgroup.artifacts": "Artifacts"
 }

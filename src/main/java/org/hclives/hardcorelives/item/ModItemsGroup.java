@@ -22,6 +22,9 @@ public class ModItemsGroup {
                         entries.add(ModItems.FARRON_DAGGER);
                         entries.add(ModItems.CELERITAL_SCROLL);
                         entries.add(ModItems.ERGO_RUNE);
+                        entries.add(ModItems.VEDAS_AGNI);
+                        entries.add(ModItems.TRICKSTERS_HUILU);
+                        entries.add(ModItems.SYDAN_STONE);
                     })).build());
 
     public static void registerItemGroups() {
