@@ -14,9 +14,15 @@
   "tooltip.hardcorelives.tricksters.huilu.2": "known as the §6Hiisi§r. Said to have been used",
   "tooltip.hardcorelives.tricksters.huilu.3": "to create the whistling winds that flow through",
   "tooltip.hardcorelives.tricksters.huilu.4": "narrow mountain passes.",
+  "tooltip.hardcorelives.sydan_stone.1": "You feel immeasurable §4malice",
+  "tooltip.hardcorelives.sydan_stone.2": "while holding this stone.",
+  "tooltip.hardcorelives.woodland_heart.1": "You hear a faint creaking noise",
+  "tooltip.hardcorelives.woodland_heart.2": "as the wood pulses in your hand.",
 
   "sounds.hardcorelives.tricksters_huilu_flute_plays": "Flute plays",
   "sounds.hardcorelives.tricksters_huilu_flute_fails": "Flute fails",
+  "sounds.hardcorelives.sydan_stone_plays": "The Stone weeps...",
+  "sounds.hardcorelives.woodland_heart_plays": "The Heart beats...",
 
   "itemgroup.artifacts": "Artifacts"
 }

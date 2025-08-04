@@ -17,6 +17,16 @@ public class HardcorelivesClient implements ClientModInitializer {
                 list.add(Text.translatable("tooltip.hardcorelives.tricksters.huilu.4"));
                 return;
             }
+            if (itemStack.isOf(ModItems.SYDAN_STONE)) {
+                list.add(Text.translatable("tooltip.hardcorelives.sydan_stone.1"));
+                list.add(Text.translatable("tooltip.hardcorelives.sydan_stone.2"));
+                return;
+            }
+            if (itemStack.isOf(ModItems.WOODLAND_HEART)) {
+                list.add(Text.translatable("tooltip.hardcorelives.woodland_heart.1"));
+                list.add(Text.translatable("tooltip.hardcorelives.woodland_heart.2"));
+                return;
+            }
         });
     }
 }

@@ -4,11 +4,20 @@
     "sounds": [
       "hardcorelives:tricksters_huilu_flute_plays"
     ]
-  },
-  "tricksters_huilu_flute_fails" : {
+  }, "tricksters_huilu_flute_fails" : {
     "subtitle": "sounds.hardcorelives.tricksters_huilu_flute_fails",
     "sounds": [
       "hardcorelives:tricksters_huilu_flute_fails"
+    ]
+  }, "sydan_stone_plays" : {
+    "subtitle": "sounds.hardcorelives.sydan_stone_plays",
+    "sounds": [
+      "hardcorelives:sydan_stone_plays"
+    ]
+  }, "woodland_heart_plays" : {
+    "subtitle": "sounds.hardcorelives.woodland_heart_plays",
+    "sounds": [
+      "hardcorelives:woodland_heart_plays"
     ]
   }
 }

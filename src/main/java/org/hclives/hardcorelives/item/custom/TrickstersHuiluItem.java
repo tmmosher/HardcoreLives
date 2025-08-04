@@ -8,7 +8,6 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import org.hclives.hardcorelives.sound.ModSounds;
 
@@ -19,26 +18,6 @@ import java.util.UUID;
 
 public class TrickstersHuiluItem extends Item {
 
-    private static class CooldownEntry {
-        private Instant lastUsed;
-        private Instant oneHourInFuture = null;
-        CooldownEntry() {
-            lastUsed = Instant.EPOCH;
-        }
-
-        public Instant getLastUsed() {
-            return lastUsed;
-        }
-        public Instant getOneHourInFuture() {
-            return oneHourInFuture;
-        }
-        public void setLastUsed(Instant lastUsed) {
-            this.lastUsed = lastUsed;
-        }
-        public void setOneHourInFuture(Instant oneHourInFuture) {
-            this.oneHourInFuture = oneHourInFuture;
-        }
-    }
     private static final int ONE_HOUR_IN_SECONDS = 3600;
     private final Map<UUID, CooldownEntry> perPlayerCooldowns = new HashMap<>();
     private final ItemStack selfItemStack = new ItemStack(this);
@@ -55,11 +34,11 @@ public class TrickstersHuiluItem extends Item {
     public ActionResult use(World world, PlayerEntity user, Hand hand) {
         if (!world.isClient() && !user.getItemCooldownManager().isCoolingDown(selfItemStack)) {
             CooldownEntry cooldowns = perPlayerCooldowns.computeIfAbsent(user.getUuid(), k -> new CooldownEntry());
-            if (Instant.now().minusSeconds(cooldowns.getLastUsed().getEpochSecond()).getEpochSecond()
+            if (Instant.now().minusSeconds(cooldowns.getLastUsedTime().getEpochSecond()).getEpochSecond()
                     >= ONE_HOUR_IN_SECONDS) {
                 addTnt(user);
-                cooldowns.setLastUsed(Instant.now());
-                cooldowns.setOneHourInFuture(cooldowns.getLastUsed().plusSeconds(ONE_HOUR_IN_SECONDS));
+                cooldowns.setLastUsedTime(Instant.now());
+                cooldowns.setNextUseTime(cooldowns.getLastUsedTime().plusSeconds(ONE_HOUR_IN_SECONDS));
                 float MAX_PITCH = 1.1f;
                 float MIN_PITCH = 0.9f;
                 float randomPitch = (MIN_PITCH + (MAX_PITCH - MIN_PITCH) * user.getRandom().nextFloat());
@@ -68,7 +47,7 @@ public class TrickstersHuiluItem extends Item {
                 user.getItemCooldownManager().set(selfItemStack, 90);
                 return ActionResult.SUCCESS;
             } else {
-                int gapMinutes = Math.toIntExact(cooldowns.getOneHourInFuture().minusSeconds(Instant.now().getEpochSecond()).getEpochSecond() / 60);
+                int gapMinutes = Math.toIntExact(cooldowns.getNextUseTime().minusSeconds(Instant.now().getEpochSecond()).getEpochSecond() / 60);
                 world.playSound(null, user.getBlockPos(), ModSounds.TRICKSTERS_HUILU_FLUTE_FAILS,
                         SoundCategory.PLAYERS, 1f, 1f);
                 user.getItemCooldownManager().set(selfItemStack, 40);
