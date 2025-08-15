@@ -50,7 +50,7 @@ public class ModItems {
 
     private static Item registerItem(String itemName) {
         RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Hardcorelives.MOD_ID, itemName));
-        // this is INSANELY smelly code. TODO refactor to builder pattern and get rid of this mess
+        // this is INSANELY smelly code. TODO refactor to builder pattern and get rid of this procedural mess once done with prototyping
         Item item = switch (itemName) {
             case "woodland_heart" -> new WoodlandHeartItem(new Item.Settings().registryKey(key).maxCount(1));
             case "ergo_rune" -> new ErgoRuneItem(new Item.Settings().registryKey(key).maxCount(1));
