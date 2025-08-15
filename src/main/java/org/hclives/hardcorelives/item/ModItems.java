@@ -23,7 +23,7 @@ public class ModItems {
     public static final Item CHAIN_OF_FATE = registerItem("chain_of_fate");
     // chance of parrying an opponent's attack
     public static final Item FARRON_DAGGER = registerItem("farron_dagger");
-    // sunder your lungs with unholy fury, slowing down every player around you and speeding yourself up
+    // scream, slowing down every player around you and speeding yourself up
     public static final Item CELERITAL_SCROLL = registerItem("celerital_scroll");
     // freeze time, reducing tick speed to 0 and giving all other players slowness X for two seconds
     public static final Item ERGO_RUNE = registerItem("ergo_rune");
@@ -49,8 +49,8 @@ public class ModItems {
     }
 
     private static Item registerItem(String itemName) {
-        // may need to refactor the 'settings' handling as per https://fabricmc.net/2024/10/14/1212.html
         RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Hardcorelives.MOD_ID, itemName));
+        // this is INSANELY smelly code. TODO refactor to builder pattern and get rid of this mess
         Item item = switch (itemName) {
             case "woodland_heart" -> new WoodlandHeartItem(new Item.Settings().registryKey(key).maxCount(1));
             case "ergo_rune" -> new ErgoRuneItem(new Item.Settings().registryKey(key).maxCount(1));
